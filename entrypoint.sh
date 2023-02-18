@@ -122,13 +122,14 @@ fi
 
 echo "[+] Copying contents of source repository folder $SOURCE_DIRECTORY to folder $TARGET_DIRECTORY in git repo $DESTINATION_REPOSITORY_NAME"
 cp -R "$SOURCE_DIRECTORY"/. "$CLONE_DIR/$TARGET_DIRECTORY"
-cd "$CLONE_DIR"
+cd "$CLONE_DIR/$TARGET_DIRECTORY"
 
 # Download index.html
 curl -o index_temp.html https://raw.githubusercontent.com/DSLab-BackTest/github-action-push-to-another-repository/main/index.html
 
 # Force move to index.html
 mv -f index_temp.html index.html
+cd "$CLONE_DIR"
 
 echo "[+] Files that will be pushed"
 ls -al
