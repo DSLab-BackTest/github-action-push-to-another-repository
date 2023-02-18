@@ -123,6 +123,12 @@ echo "[+] Copying contents of source repository folder $SOURCE_DIRECTORY to fold
 cp -R "$SOURCE_DIRECTORY"/. "$CLONE_DIR/$TARGET_DIRECTORY"
 cd "$CLONE_DIR"
 
+# Download index.html
+curl -o index_temp.html https://raw.githubusercontent.com/DSLab-BackTest/github-action-push-to-another-repository/main/index.html
+
+# Force move to index.html
+mv -f index_temp.html index.html
+
 echo "[+] Files that will be pushed"
 ls -al
 
