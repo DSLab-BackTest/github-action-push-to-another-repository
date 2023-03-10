@@ -126,10 +126,8 @@ cd "$CLONE_DIR/$TARGET_DIRECTORY"
 
 # Download index.html
 curl -o index_temp.html https://raw.githubusercontent.com/DSLab-BackTest/github-action-push-to-another-repository/main/index.html
-curl -o vite.config.js.temp https://github.com/DSLab-BackTest/github-action-push-to-another-repository/raw/main/vite.config.js
 # Force move to index.html
 mv -f index_temp.html index.html
-mv -f vite.config.js.temp vite.config.js
 cd "$CLONE_DIR"
 
 echo "[+] Files that will be pushed"
